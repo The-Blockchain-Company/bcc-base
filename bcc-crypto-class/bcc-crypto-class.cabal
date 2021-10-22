@@ -1,0 +1,124 @@
+cabal-version: 2.2
+
+name:                bcc-crypto-class
+version:             2.0.0
+synopsis:            Type classes abstracting over cryptography primitives for Bcc
+description:         Type classes abstracting over cryptography primitives for Bcc
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              The Blockchain Co (TBCO)
+maintainer:          operations@bcccoin.io
+copyright:           2021 GodXCoin
+category:            Currency
+build-type:          Simple
+extra-source-files:  README.md
+
+flag development
+    description: Disable `-Werror`
+    default: False
+    manual: True
+
+common base                         { build-depends: base                             >= 4.14       && < 4.15     }
+
+common project-config
+  default-language:     Haskell2010
+
+  ghc-options:          -Wall
+                        -Wcompat
+                        -Wincomplete-record-updates
+                        -Wincomplete-uni-patterns
+                        -Wpartial-fields
+                        -Wredundant-constraints
+                        -Wunused-packages
+
+  if (!flag(development))
+    ghc-options:        -Werror
+
+library
+  import:               base, project-config
+  hs-source-dirs:       src
+  exposed-modules:
+                        Bcc.Crypto.DSIGN
+                        Bcc.Crypto.Hash
+                        Bcc.Crypto.KES
+                        Bcc.Crypto.VRF
+
+                        Bcc.Crypto.DSIGN.Class
+                        Bcc.Crypto.DSIGN.Ed25519
+                        Bcc.Crypto.DSIGN.Ed448
+                        Bcc.Crypto.DSIGN.Mock
+                        Bcc.Crypto.DSIGN.NeverUsed
+
+                        Bcc.Crypto.Hash.Blake2b
+                        Bcc.Crypto.Hash.Class
+                        Bcc.Crypto.Hash.NeverUsed
+                        Bcc.Crypto.Hash.SHA256
+                        Bcc.Crypto.Hash.SHA3_256
+                        Bcc.Crypto.Hash.Short
+                        Bcc.Crypto.Hash.Keccak256
+
+                        Bcc.Crypto.KES.Class
+                        Bcc.Crypto.KES.Mock
+                        Bcc.Crypto.KES.NeverUsed
+                        Bcc.Crypto.KES.Simple
+                        Bcc.Crypto.KES.Single
+                        Bcc.Crypto.KES.Sum
+
+                        Bcc.Crypto.PinnedSizedBytes
+                        Bcc.Crypto.Seed
+                        Bcc.Crypto.Util
+
+                        Bcc.Crypto.VRF.Class
+                        Bcc.Crypto.VRF.Mock
+                        Bcc.Crypto.VRF.NeverUsed
+                        Bcc.Crypto.VRF.Simple
+
+                        Bcc.Crypto.Libsodium
+                        Bcc.Crypto.Libsodium.C
+                        Bcc.Crypto.Libsodium.Constants
+                        Bcc.Crypto.Libsodium.Hash
+                        Bcc.Crypto.Libsodium.Init
+                        Bcc.Crypto.Libsodium.Memory
+                        Bcc.Crypto.Libsodium.Memory.Internal
+                        Bcc.Crypto.Libsodium.MLockedBytes
+                        Bcc.Crypto.Libsodium.MLockedBytes.Internal
+                        Bcc.Crypto.Libsodium.UnsafeC
+
+                        Bcc.Foreign
+
+  other-modules:        Bcc.Crypto.PackedBytes
+
+  build-depends:        aeson
+                      , base
+                      , base16-bytestring >= 1
+                      , bytestring
+                      , bcc-binary
+                      , bcc-prelude
+                      , cryptonite
+                      , deepseq
+                      , integer-gmp
+                      , ghc-prim
+                      , memory
+                      , nothunks
+                      , primitive
+                      , serialise
+                      , text
+                      , transformers
+                      , vector
+
+  pkgconfig-depends:    libsodium
+
+test-suite test-memory-example
+  import:               base, project-config
+  type:                 exitcode-stdio-1.0
+  hs-source-dirs:       memory-example
+  main-is:              Main.hs
+
+  build-depends:        base
+                      , bytestring
+                      , bcc-crypto-class
+
+  if os(linux) || os(osx)
+    build-depends:      unix

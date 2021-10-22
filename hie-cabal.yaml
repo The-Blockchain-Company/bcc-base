@@ -1,0 +1,40 @@
+cradle:
+  cabal:
+    - path: "base-deriving-via/src"
+      component: "lib:base-deriving-via"
+
+    - path: "binary/src"
+      component: "lib:bcc-binary"
+
+    - path: "binary/test"
+      component: "bcc-binary:test:test"
+
+    - path: "bcc-crypto-class/src"
+      component: "lib:bcc-crypto-class"
+
+    - path: "bcc-crypto-class/memory-example"
+      component: "bcc-crypto-class:test:test-memory-example"
+
+    - path: "bcc-crypto-optimum/src"
+      component: "lib:bcc-crypto-optimum"
+
+    - path: "bcc-crypto-tests/src"
+      component: "lib:bcc-crypto-tests"
+
+    - path: "bcc-crypto-tests/test"
+      component: "bcc-crypto-tests:test:test-crypto"
+
+    - path: "measures/src"
+      component: "lib:measures"
+
+    - path: "measures/test"
+      component: "measures:test:test"
+
+    - path: "orphans-deriving-via/src"
+      component: "lib:orphans-deriving-via"
+
+    - path: "slotting/src"
+      component: "lib:bcc-slotting"
+
+    - path: "strict-containers"
+      component: "lib:strict-containers"
