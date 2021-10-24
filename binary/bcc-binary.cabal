@@ -10,7 +10,7 @@ license-files:
   NOTICE
 author:              The Blockchain Co (TBCO)
 maintainer:          operations@bcccoin.io
-copyright:           2021 GodXCoin
+copyright:           2021 The Blockchain Co.
 category:            Currency
 build-type:          Simple
 extra-source-files:  README.md
