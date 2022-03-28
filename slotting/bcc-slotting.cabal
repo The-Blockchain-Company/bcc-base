@@ -10,7 +10,7 @@ license-files:
   LICENSE
   NOTICE
 author:              The Blockchain Co (TBCO) Formal Methods Team
-maintainer:          formal.methods@bcccoin.io
+maintainer:          dev@blockchain-company.io
 copyright:           The Blockchain Co (TBCO)
 -- category:
 build-type:          Simple

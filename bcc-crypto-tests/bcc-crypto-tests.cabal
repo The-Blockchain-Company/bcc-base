@@ -9,7 +9,7 @@ license-files:
   LICENSE
   NOTICE
 author:              The Blockchain Co (TBCO)
-maintainer:          operations@bcccoin.io
+maintainer:          operations@blockchain-company.io
 copyright:           2020-2021 The Blockchain Co (TBCO)
 category:            Currency
 build-type:          Simple

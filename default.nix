@@ -3,14 +3,14 @@
 # allows to customize haskellNix (ghc and profiling, see ./nix/haskell.nix)
 , config ? {}
 # allows to override dependencies of the project without modifications,
-# eg. to test build against local checkout of bcccoin-nix:
+# eg. to test build against local checkout of tbco-nix:
 # nix build -f default.nix bcc-base --arg sourcesOverride '{
-#   bcccoin-nix = ../bcccoin-nix;
+#   tbco-nix = ../tbco-nix;
 # }'
 , sourcesOverride ? {}
-# pinned version of nixpkgs augmented with overlays (bcccoin-nix and our packages).
+# pinned version of nixpkgs augmented with overlays (tbco-nix and our packages).
 , pkgs ? import ./nix { inherit system crossSystem config sourcesOverride; }
-, gitrev ? pkgs.bcccoinNix.commitIdFromGitRepoOrZero ./.git
+, gitrev ? pkgs.tbcoNix.commitIdFromGitRepoOrZero ./.git
 }:
 with pkgs; with commonLib;
 let

@@ -25,16 +25,16 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "version": ""
     },
-    "bcccoin-nix": {
+    "tbco-nix": {
         "branch": "master",
         "description": "nix scripts shared across projects",
         "homepage": null,
         "owner": "The-Blockchain-Company",
-        "repo": "bcccoin-nix",
+        "repo": "tbco-nix",
         "rev": "",
         "sha256": "",
         "type": "tarball",
-        "url": "https://github.com/The-Blockchain-Company/bcccoin-nix/",
+        "url": "https://github.com/The-Blockchain-Company/tbco-nix/",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "version": ""
     }

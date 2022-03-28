@@ -7,7 +7,7 @@ description:         Test helpers from bcc-binary exposed to other packages
 license:             MIT
 license-file:        LICENSE
 author:              The Blockchain Co (TBCO)
-maintainer:          operations@bcccoin.io
+maintainer:          operations@blockchain-company.io
 copyright:           2021 The Blockchain Co.
 category:            Currency
 build-type:          Simple
