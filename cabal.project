@@ -1,4 +1,4 @@
-index-state: 2022-04-05T00:00:00Z
+index-state: 2021-03-15T00:00:00Z
 
 packages:
   base-deriving-via
@@ -19,7 +19,7 @@ package bcc-crypto
 source-repository-package
   type: git
   location: https://github.com/The-Blockchain-Company/bcc-prelude
-  tag: c1f053a9dbc2763ad2163281a356a2cf0f4d7858
+  tag: 
   
   subdir:
     bcc-prelude
@@ -28,5 +28,5 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/The-Blockchain-Company/bcc-crypto
-  tag: ce2f7994556490b169914f8d818fb9ef6149211f
+  tag: 
   
